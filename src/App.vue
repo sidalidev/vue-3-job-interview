@@ -1,81 +1,62 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import ProductList from './components/ProductList.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="App">
+    <h1><span role="img" aria-label="Store emoji"> 🏪 </span> Good Store</h1>
+    <ProductList />
+  </div>
 </template>
 
 <style>
-@import './assets/base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
 
-header {
-  line-height: 1.5;
+.ProductList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  justify-items: center;
+  margin-top: 16px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.ProductCard {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  border-radius: 8px;
+  width: 200px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.ProductCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.ProductCard p {
+  text-overflow: ellipsis;
+  height: 50px;
+  overflow: hidden;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+/* On mouse-over, add a deeper shadow */
+.ProductCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+/* Add some padding inside the card container */
+.ProductDescription {
+  padding: 2px 16px;
+}
 
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.ProductSearch {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  border: 1px rgb(238, 238, 238) solid;
 }
 </style>
