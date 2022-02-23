@@ -7,9 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <div className="ProductCard">
+  <div class="ProductCard">
     <img :src="product.image" alt="{description}" />
-    <div className="ProductDescription">
+    <div class="ProductDescription">
       <h4>{{ product.title }}</h4>
       <h3>{{ product.price }}€</h3>
       <p>{{ product.description }}</p>
